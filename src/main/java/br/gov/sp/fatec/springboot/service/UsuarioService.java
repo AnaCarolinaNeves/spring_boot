@@ -29,7 +29,7 @@ public class UsuarioService {
     @Autowired
     private AutorizacaoRepository autorizacaoRepo;
 
-    @PreAuthorize("hasRole('ADMIN', 'MANAGER')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public List<Usuario> buscarTodosUsuarios() {
         List<Usuario> usuarios = usuarioRepo.findAll();
         return usuarios;
