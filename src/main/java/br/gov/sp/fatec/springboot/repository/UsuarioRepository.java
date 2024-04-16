@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import br.gov.sp.fatec.springboot.entity.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
-    public Usuario findByNome(String nomeUsuario);
+    public Optional<Usuario> findByNome(String nomeUsuario);
 
     //?1 primeiro parametro
     @Query("select u from Usuario u where u.nome = ?1")
